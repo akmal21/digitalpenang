@@ -1,0 +1,12 @@
+docker run -d --name=calibre \
+-p 7080:8080 \
+-p 7081:8081 \
+-e PUID=1026 \
+-e PGID=100 \
+-e TZ=Asia/Kuala_Lumpur \
+-e CUSTOM_USER=libadmin \
+-e PASSWORD=libadmin123 \
+-v /volume1/docker/calibre:/config \
+--security-opt seccomp=unconfined \
+--restart always \
+ghcr.io/linuxserver/calibre

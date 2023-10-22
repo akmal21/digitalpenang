@@ -1,0 +1,11 @@
+docker run -d --name=calibre-web \
+-p 8083:8083 \
+-e PUID=1026 \
+-e PGID=100 \
+-e TZ=Asia/Kuala_Lumpur \
+-e DOCKER_MODS=linuxserver/mods:universal-calibre \
+-e OAUTHLIB_RELAX_TOKEN_SCOPE=1 \
+-v /volume1/docker/calibreweb:/config \
+-v /volume1/web/books:/books \
+--restart always \
+ghcr.io/linuxserver/calibre-web
